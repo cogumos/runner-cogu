@@ -1,46 +1,55 @@
-![Demo](https://netcattest.com/im/foto3-runner-cogu.jpg)
+# runner-cogu
 
-## Uma maneira mais visual e prática de rodar testes Cypress Node.js + Module API
+> Runner customizado para Cypress com Node.js e Module API, criado para tornar a execução de testes E2E pelo terminal mais clara, previsível e fácil de operar.
 
-O **runner-cogu** é um script em Node.js que oferece uma experiência de execução mais completa do que o tradicional `npx cypress run`, com **menus interativos**, **métricas básicas**, **relatórios mais claros**, **checagens de ambiente** e uma **visualização mais agradável** para entender rapidamente o que está acontecendo durante os testes, sem alterar sua estrutura.
+O `runner-cogu` adiciona uma camada de execução sobre o Cypress com seleção interativa de usuário e ambiente, checks da máquina, acompanhamento pelo terminal e métricas para ajudar a interpretar a qualidade e a estabilidade da rodada de testes.
 
----
+`// executar. observar. entender.`
 
-![Demo](https://netcattest.com/im/escolha-runner-cogu.gif)
 
-## ✨ Recursos principais
+## >_ o que ele faz
 
-- Seleção de **usuário** e **ambiente** através de menus interativos
-- Relatórios visuais no terminal (barra de progresso, status em tempo real, resumo limpo)
-- **Checks da máquina** antes de rodar (CPU, memória, risco de falso negativo)
-- **Quality Score** + **Índice de Estabilidade** com base nos resultados
-- Integração com o Cypress via **Module API**, sem gambiarras
-- Execução simplificada: `node runner-cogu`
+- seleção interativa de **usuário e ambiente**;
+- execução via **Cypress Module API**;
+- verificações de CPU e memória;
+- acompanhamento da execução diretamente pelo terminal;
+- resumo dos resultados;
+- **Quality Score** e **Índice de Estabilidade**;
+- configuração adaptável para diferentes projetos Cypress.
 
----
+```text
+usuário → ambiente → checks → Cypress → resultados → métricas
+```
 
-## 🚀 Como usar
 
-1️⃣ Em um projeto novo
-
+## >_ como testar
 
 ```bash
 git clone https://github.com/cogumos/runner-cogu.git
+cd runner-cogu
 npm install
-npx cypress install
 node runner-cogu.js
-
 ```
 
----
+Se o Cypress ainda não estiver disponível:
 
-2️⃣ Em um projeto Cypress existente
+```bash
+npx cypress install
+```
 
-- Copie `runner-cogu.js` para seu projeto
-- Ajuste caminhos/variáveis conforme sua estrutura
-- (Opcional) Adicione ao `package.json`:
+Depois, basta seguir as opções apresentadas pelo runner no terminal.
 
-Exemplo de script opcional (inserir dentro do arquivo `package.json`):
+
+## >_ integrar em outro projeto Cypress
+
+Copie `runner-cogu.js` para o seu projeto, ajuste usuários, ambientes e configurações e execute:
+
+```bash
+node runner-cogu.js
+```
+
+Ou adicione ao `package.json`:
+
 ```json
 {
   "scripts": {
@@ -49,40 +58,15 @@ Exemplo de script opcional (inserir dentro do arquivo `package.json`):
 }
 ```
 
-Depois disso, você pode executar diretamente por:
+E rode:
+
 ```bash
 npm run runner
-#ou
-node runner-cogu
-#ou
-node runner-cogu.js
-```
----
-
-
-## 🔍 Checando o Cypress
-```bash
-# Antes de rodar o runner, confira:
-npx cypress -v
-# Caso o Cypress não esteja instalado no seu projeto:
-npx cypress install
 ```
 
----
 
-## ⚙️ Personalização
+## >_ stack
 
-O **runner-cogu** permite alterar o nome do runner, além de personalizar usuários, ambientes, métricas, validações e o formato dos relatórios, tudo de forma simples e fácil de editar.
+`Cypress` `Cypress Module API` `Node.js` `JavaScript` `npm`
 
----
-
-
-## 💡 Vantagens
-
-- Melhora a experiência de quem roda testes diariamente
-- Reduz erros de ambiente e configuração
-- Traz métricas que ajudam a visualizar estabilidade
-- Centraliza configuração em um único lugar
-- Deixa o processo mais profissional e previsível
-
----
+**Foco:** `E2E Testing` `Test Automation` `Quality Engineering` `CLI` `Developer Experience`
