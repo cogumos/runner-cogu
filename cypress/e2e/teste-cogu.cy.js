@@ -19,8 +19,7 @@ describe('Validação do Sistema de Teste Runner-Cogu', () => {
     // Sem isso, o teste falharia pois o Cypress reseta a página entre os blocos 'it'.
     cy.visit('https://example.cypress.io/commands/actions')
 
-  // Caso queira que o teste falhe propositalmente, descomente a linha abaixo:
-    .should('have.value', 'cogu1')
+    // A asserção de falha proposital foi removida para manter a suíte principal estável.
     cy.get('.action-email')
       .should('be.visible') // Garante que o input existe e é visível
       .type('cogu')
